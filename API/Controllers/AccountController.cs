@@ -45,6 +45,11 @@ namespace API.Controllers
             };
         }
 
+        /*
+         * Takes username and password then checks if username exist.
+         * If it exists, it checks to see if the password it has accepted is the same as in the database
+         * If password is vaild return username and token
+         */
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -68,6 +73,7 @@ namespace API.Controllers
 
         }
 
+        // Checks if the user exists and return true or false
         private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
