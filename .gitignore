@@ -481,3 +481,4 @@ API/datingapp.db-wal
 client/ssl/server.key
 client/ssl/server.crt
 .idea/
+.vscode/
